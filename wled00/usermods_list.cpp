@@ -11,6 +11,8 @@
  */
 //#include "../usermods/EXAMPLE_v2/usermod_v2_example.h"
 
+#include "usermod_v2_test.h"
+
 #ifdef USERMOD_DALLASTEMPERATURE
 #include "../usermods/Temperature/usermod_temperature.h"
 #endif
@@ -82,6 +84,8 @@ void registerUsermods()
    * \/ \/ \/
    */
   //usermods.add(new MyExampleUsermod());
+
+  usermods.add(new UsermodASD());
 
   #ifdef USERMOD_DALLASTEMPERATURE
   usermods.add(new UsermodTemperature());
