@@ -132,6 +132,9 @@ void WLED::loop()
   handleIR();
   handleAlexa();
 
+  #ifdef WLED_ENABLE_OPC
+    handleOPCPacket();
+  #endif
   yield();
 
   if (doReboot)
@@ -608,6 +611,8 @@ void WLED::initInterfaces()
   e131.begin(e131Multicast, e131Port, e131Universe, E131_MAX_UNIVERSE_COUNT);
   reconnectHue();
   initMqtt();
+  //Init OPC
+  initOPCServer();
   interfacesInited = true;
   wasConnected = true;
 }
