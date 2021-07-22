@@ -404,9 +404,9 @@ WLED_GLOBAL uint16_t userVar0 _INIT(0), userVar1 _INIT(0); //available for use i
 #ifdef WLED_ENABLE_OPC //opc test support
   WLED_GLOBAL AsyncClient* clientServed _INIT(nullptr);
   WLED_GLOBAL AsyncServer* opcServer _INIT(nullptr);
-  WLED_GLOBAL bool opcParserInvalidData _INIT(false);
-  WLED_GLOBAL bool opcParserParsingData _INIT(false);
   WLED_GLOBAL uint16_t opcDataLen _INIT(0);
+  WLED_GLOBAL cbuf* opcCircularBufPtr _INIT(nullptr);
+  WLED_GLOBAL bool opcParserWaitingForData _INIT(false);
 #endif
 
 // internal global variable declarations

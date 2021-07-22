@@ -611,8 +611,9 @@ void WLED::initInterfaces()
   e131.begin(e131Multicast, e131Port, e131Universe, E131_MAX_UNIVERSE_COUNT);
   reconnectHue();
   initMqtt();
-  //Init OPC
+#ifdef WLED_ENABLE_OPC
   initOPCServer();
+#endif
   interfacesInited = true;
   wasConnected = true;
 }
