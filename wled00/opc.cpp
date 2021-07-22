@@ -9,7 +9,7 @@
 
 #define OPC_SERVER_PORT 7890
 #define OPC_LISTEN_CHANNEL 1
-#define OPC_MAX_FRAME_STORAGE 60
+#define OPC_MAX_FRAME_STORAGE 30
 #define OPC_HEADER_SIZE 4
 
 void freeOPCClient(AsyncClient* client) {
